@@ -11,7 +11,7 @@
 
 rp_module_id="zandronum"
 rp_module_desc="Zandronum - Enhanced multiplayer port of the official DOOM source"
-rp_module_licence="GPL2 https://raw.githubusercontent.com/tpo1990/DoomLegacy-RPI/master/LICENSE"
+rp_module_licence="Sleepycat https://bitbucket.org/Torr_Samaho/zandronum/raw/c11f78a5b0286096da1bad5d40cbd54ac71f675d/LICENSE.txt"
 rp_module_help="Add your own iwad and pwads to $romdir/ports/doom"
 rp_module_section="exp"
 rp_module_flags=""
