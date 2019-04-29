@@ -1,8 +1,8 @@
-How to install scriptmodules
+How to install scriptmodules.
 
-**First clone the chosen scriptmodule into RetroPie-Setup by replacing the "example.sh" with the name of the scriptmodule and use the command in Terminal or Command line interface.**
+**First clone the chosen scriptmodule into RetroPie-Setup by replacing the "example.sh" with the name of the scriptmodule and use the command in Terminal or Command Line Interface.**
 
-Use terminal or Command and type/instert the following command:
+Use Terminal or Command Line Interface and enter the following command:
 wget https://raw.githubusercontent.com/tpo1990/Doom-RPI/master/scriptmodules/example.sh -P /home/pi/RetroPie-Setup/scriptmodules/ports/
 
 **Second install the scriptmodule from RetroPie setup**
