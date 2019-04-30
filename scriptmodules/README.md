@@ -1,4 +1,4 @@
-#How to install scriptmodules#
+# How to install scriptmodules
 
 **First clone the chosen scriptmodule into RetroPie-Setup by replacing the "example.sh" with the name of the scriptmodule and use the command in Terminal or Command Line Interface.**
 
