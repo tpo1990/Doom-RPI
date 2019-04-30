@@ -17,7 +17,7 @@ rp_module_section="exp"
 rp_module_flags=""
 
 function depends_zandronum() {
-    getDepends cmake libsdl-sound1.2-dev libsdl1.2-dev libsdl-mixer1.2-dev libsdl-image1.2-dev  libsdl-net1.2-dev libgtk2.0-dev libfluidsynth-dev libmpg123-dev libsndfile1-dev libgme-dev libglew-dev
+    getDepends cmake libsdl-sound1.2-dev libsdl1.2-dev libsdl-mixer1.2-dev libsdl-image1.2-dev  libsdl-net1.2-dev libgtk2.0-dev libfluidsynth-dev libmpg123-dev libsndfile1-dev libgme-dev libglew-dev libssl-dev mercurial
 }
 
 function sources_zandronum() {
@@ -34,6 +34,8 @@ function install_zandronum() {
     md_ret_files=(
        'zandronum.mod/zandronum'
        'zandronum.mod/zandronum.pk3'
+       'zandronum.mod/skulltag_actors.pk3'
+       'zandronum.mod/brightmaps.pk3'
     )
 }
 
