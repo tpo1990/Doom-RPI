@@ -11,7 +11,7 @@
 
 rp_module_id="zandronum"
 rp_module_desc="Zandronum - Enhanced multiplayer port of the official DOOM source"
-rp_module_licence="Sleepycat https://bitbucket.org/Torr_Samaho/zandronum/raw/c11f78a5b0286096da1bad5d40cbd54ac71f675d/LICENSE.txt"
+rp_module_licence="GPL2 https://raw.githubusercontent.com/tpo1990/DoomLegacy-RPI/master/LICENSE"
 rp_module_help="Add your own iwad and pwads to $romdir/ports/doom"
 rp_module_section="exp"
 rp_module_flags=""
@@ -40,15 +40,31 @@ function install_zandronum() {
 }
 
 function game_data_zandronum() {
-    if [[ ! -f "$romdir/ports/doom/doom1.wad" ]]; then
-        wget -nv -O "$romdir/ports/doom/doom1.wad" "$__archive_url/doom1.wad"
-        chown $user:$user "$romdir/ports/doom/doom1.wad"
+    if [[ -f "$romdir/ports/doom/doom.wad" ]]; then
+       chown $user:$user "$romdir/ports/doom/doom.wad"
+       addPort "$md_id" "doom" "Doom" "DOOMWADDIR=$romdir/ports/doom $md_inst/zandronum -iwad %ROM%" "$romdir/ports/doom/doom.wad"
+    else wget "$__archive_url/doom1.wad" -O "$romdir/ports/doom/doom1.wad"
+       chown $user:$user "$romdir/ports/doom/doom1.wad"
+       addPort "$md_id" "doom" "Doom Shareware" "DOOMWADDIR=$romdir/ports/doom $md_inst/zandronum -iwad %ROM%" "$romdir/ports/doom/doom1.wad"
+    fi
+    
+    if [[ -f "$romdir/ports/doom/doom2.wad" ]]; then
+       chown $user:$user "$romdir/ports/doom/doom2.wad"
+       addPort "$md_id" "doom" "Doom II: Hell on Earth" "DOOMWADDIR=$romdir/ports/doom $md_inst/zandronum -iwad %ROM%" "$romdir/ports/doom/doom2.wad"
+    fi
+    
+    if [[ -f "$romdir/ports/doom/tnt.wad" ]]; then
+       chown $user:$user "$romdir/ports/doom/tnt.wad"
+       addPort "$md_id" "doom" "Final Doom - TNT: Evilution" "DOOMWADDIR=$romdir/ports/doom $md_inst/zandronum -iwad %ROM%" "$romdir/ports/doom/tnt.wad"
+    fi
+    
+    if [[ -f "$romdir/ports/doom/plutonia.wad" ]]; then
+       chown $user:$user "$romdir/ports/doom/plutonia.wad"
+       addPort "$md_id" "doom" "Final Doom - The Plutonia Experiment" "DOOMWADDIR=$romdir/ports/doom $md_inst/zandronum -iwad %ROM%" "$romdir/ports/doom/plutonia.wad"
     fi
 }
 
 function configure_zandronum() {
-    addPort "$md_id" "doom" "Doom" "DOOMWADDIR=$romdir/ports/doom $md_inst/zandronum -iwad %ROM%" "$romdir/ports/doom/doom1.wad"
-
     mkRomDir "ports/doom"
 
     mkUserDir "$home/.zandronum"
